@@ -8,9 +8,13 @@ class Item
     @archived = archived
   end
 
-  def can_be_archived?; end
+  def can_be_archived?
+    @published_date > 10
+  end
 
-  def move_to_archive; end
+  def move_to_archive
+    @archived = true if can_be_archived?
+  end
 
   def author=(author)
     @author = author
@@ -32,3 +36,4 @@ class Item
     @genre.items << self
   end
 end
+
