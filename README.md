@@ -72,11 +72,11 @@ To run the project, execute the following command:
 - Twitter: [@tarikbouari](https://twitter.com/tarikbouari)
 - LinkedIn: [Tarike Bouari](https://www.linkedin.com/in/tarik-bouari-44b7191a6/)
 
-👤 Tarike Bouari
+👤 Abigiya Tadesse
 
 - GitHub: [@AbigiyaTY](https://github.com/AbigiyaTY)
 - Twitter: [@AbigiyaTY](https://twitter.com/AbigiyaTY)
-- LinkedIn: [Tarike Bouari](https://www.linkedin.com/in/AbigiyaTY)
+- LinkedIn: [Abigiya Tadesse](https://www.linkedin.com/in/AbigiyaTY)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
