@@ -36,4 +36,3 @@ class Item
     @genre.items << self
   end
 end
-
