@@ -1,4 +1,3 @@
-
 require_relative './Movies/movie'
 require_relative './Movies/movie_method'
 require_relative './Source/source'
