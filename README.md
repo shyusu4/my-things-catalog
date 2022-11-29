@@ -76,7 +76,7 @@ To run the project, execute the following command:
 
 - GitHub: [@AbigiyaTY](https://github.com/AbigiyaTY)
 - Twitter: [@AbigiyaTY](https://twitter.com/AbigiyaTY)
-- LinkedIn: [Abigiya Tadesse](https://www.linkedin.com/in/AbigiyaTY)
+- LinkedIn: [AbigiyaTY](https://www.linkedin.com/in/AbigiyaTY)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
