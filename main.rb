@@ -1,4 +1,4 @@
-require './app'
+require_relative './app'
 
 def welcome
   puts 'Welcome to My Things Catalog'
@@ -21,7 +21,9 @@ end
 
 def main
   welcome
-  list_options
+  app = App.new
+  app.list_options
+  app.start
 end
 
 main
