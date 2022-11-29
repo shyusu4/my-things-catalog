@@ -20,8 +20,8 @@ def welcome
 end
 
 def main
-  welcome
-  list_options
+  app = App.new
+  app.start
 end
 
 main

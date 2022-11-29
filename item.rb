@@ -35,4 +35,12 @@ class Item
     @genre = genre
     @genre.items << self
   end
+
+  def create_json
+    {
+      id: @id,
+      published_date: @published_date,
+      archived: @archived
+    }
+  end
 end
