@@ -1,7 +1,7 @@
 require './Game/author'
 require './Game/game'
-require './MusicAlbum/musicalbum.rb'
-require './Genere/genere.rb'
+require './MusicAlbum/musicalbum'
+require './Genere/genere'
 
 class App
   def initialize
@@ -62,8 +62,8 @@ class App
   def add_music_album
     print 'Is the album on spotify? [y, n]: '
     read_on_spotify = gets.chomp
-    on_spotify = true if read_on_spotify == "y"
-    on_spotify = false if read_on_spotify == "n"
+    on_spotify = true if read_on_spotify == 'y'
+    on_spotify = false if read_on_spotify == 'n'
 
     print 'When was the game published?'
     published_date = gets.chomp
@@ -83,9 +83,9 @@ class App
       puts 'There are no music albums.'
     else
       @music_albums.each do |album|
-        is = "is "
-        is += "not " unless album.on_spotify
-        print "the album ", is, "on Spotify, and was published on ", album.published_date, ".\n"
+        is = 'is '
+        is += 'not ' unless album.on_spotify
+        print 'The album ', is, 'on Spotify, and was published on ', album.published_date, ".\n"
       end
     end
   end
@@ -94,7 +94,7 @@ class App
     if @generes.empty?
       puts 'There are no generes.'
     else
-      @generes.each { |genere| print "The genere is ", genere.name, ".\n"}
+      @generes.each { |genere| print 'The genere is ', genere.name, ".\n" }
     end
   end
 
