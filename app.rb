@@ -1,10 +1,14 @@
 require './Game/author'
 require './Game/game'
+require './MusicAlbum/musicalbum.rb'
+require './Genere/genere.rb'
 
 class App
   def initialize
     @games = []
     @authors = []
+    @music_albums = []
+    @generes = []
   end
 
   def add_author
@@ -53,6 +57,25 @@ class App
         puts "First name: #{author.first_name}, Last name: #{author.last_name}"
       end
     end
+  end
+
+  def add_music_album
+    print 'Is the album on spotify? [y, n]: '
+    read_on_spotify = gets.chomp
+    on_spotify = true if read_on_spotify == "y"
+    on_spotify = false if read_on_spotify == "n"
+
+    print 'When was the game published?'
+    published_date = gets.chomp
+
+    @music_albums << MusicAlbum.new(on_spotify, published_date)
+    print 'Music album was successfully generated. '
+
+    print 'What is the name of the genere?'
+    name = gets.chomp
+
+    @generes << Genere.new(name)
+    print 'Music album was successfully generated. '
   end
 
   def list_options
