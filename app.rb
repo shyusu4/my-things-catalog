@@ -90,6 +90,14 @@ class App
     end
   end
 
+  def list_genres
+    if @generes.empty?
+      puts 'There are no generes.'
+    else
+      @generes.each { |genere| print "The genere is ", genere.name, ".\n"}
+    end
+  end
+
   def list_options
     option = gets.chomp.to_s
     case option
