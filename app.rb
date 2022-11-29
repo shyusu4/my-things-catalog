@@ -8,11 +8,11 @@ class App
   end
 
   def add_book
-    puts 'Add publisher:'
+    puts 'Publisher:'
     publisher = gets.chomp
-    puts 'Add cover state (good or bad):'
+    puts 'Cover state (good/bad):'
     cover_state = gets.chomp
-    puts 'Add publish date:'
+    puts 'Publish date [Enter date in format (yyyy-mm-dd)]:'
     published_date = gets.chomp
     book = Book.new(published_date, publisher, cover_state)
     add_label(book)
@@ -20,9 +20,9 @@ class App
   end
 
   def add_label(item)
-    puts 'Add title:'
+    puts 'Title:'
     title = gets.chomp
-    puts 'Add color:'
+    puts 'Color:'
     color = gets.chomp
     label = Label.new(title, color)
     label.add_item(item)
