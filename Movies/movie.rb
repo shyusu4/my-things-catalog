@@ -1,7 +1,7 @@
 require_relative '../item'
-
 class Movie < Item
   attr_reader :silet
+
   def initialize(published_date, silet)
     super(published_date, false)
     @silet = silet
