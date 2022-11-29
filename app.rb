@@ -14,6 +14,16 @@ class App
     puts 'Book created successfully'
   end
 
+  def add_label(item)
+    puts 'Add title:'
+    title = gets.chomp
+    puts 'Add color:'
+    color = gets.chomp
+    label = Label.new(title, color)
+    label.add_item(item)
+    puts 'Label created successfully'
+  end
+
   def list_options
     option = gets.chomp.to_s
     case option
