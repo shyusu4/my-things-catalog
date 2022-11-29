@@ -12,5 +12,8 @@ describe Game do
     it 'should have a published_date' do
       expect(game.published_date).to eq('01/28/1998')
     end
+    it 'has can_be_archived? method' do
+      expect(game).to respond_to(:can_be_archived?)
+    end
   end
 end
