@@ -4,6 +4,7 @@ require './book-label/label'
 class App
   def initialize
     @book = []
+    @label = []
   end
 
   def add_book
