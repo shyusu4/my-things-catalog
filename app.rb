@@ -1,7 +1,10 @@
 require_relative './Movies/movie'
 require_relative './Movies/movie_method'
+require_relative './Source/source'
+require_relative './Source/source_method'
 class App
   include MovieFunctions
+  include SourcesFunctions
   def initialize
     @movies = []
     @sources = []
@@ -23,7 +26,7 @@ class App
     when '6'
       list_authors
     when '7'
-      list_sources(sources)
+      list_sources(@sources)
     when '8'
       list_genres
     when '9'
