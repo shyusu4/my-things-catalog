@@ -3,7 +3,7 @@ require_relative '../item'
 class MusicAlum < Item
   attr_reader :on_spotify
 
-  def initialize (on_spotify, published_date)
+  def initialize(on_spotify, published_date)
     super(published_date, false)
     @on_spotify = on_spotify
   end
