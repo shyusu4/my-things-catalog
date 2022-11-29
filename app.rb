@@ -71,11 +71,23 @@ class App
     @music_albums << MusicAlbum.new(on_spotify, published_date)
     print 'Music album was successfully generated. '
 
-    print 'What is the name of the genere?'
+    print 'What is the name of the genere? '
     name = gets.chomp
 
     @generes << Genere.new(name)
     print 'Music album was successfully generated. '
+  end
+
+  def list_music_albums
+    if @music_albums.empty?
+      puts 'There are no music albums.'
+    else
+      @music_albums.each do |album|
+        is = "is "
+        is += "not " unless album.on_spotify
+        print "the album ", is, "on Spotify, and was published on ", album.published_date, ".\n"
+      end
+    end
   end
 
   def list_options
