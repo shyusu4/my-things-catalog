@@ -1,3 +1,6 @@
+require './book-label/book'
+require './book-label/label'
+
 class App
   def initialize
     @book = []
