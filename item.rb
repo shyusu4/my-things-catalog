@@ -44,4 +44,3 @@ class Item
     }
   end
 end
-

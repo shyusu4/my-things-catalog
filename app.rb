@@ -61,6 +61,8 @@ class App
         puts "First name: #{author.first_name}, Last name: #{author.last_name}"
       end
     end
+  end
+
   def list_options
     option = gets.chomp.to_s
     case option

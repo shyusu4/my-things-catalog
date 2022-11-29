@@ -22,7 +22,6 @@ end
 def main
   welcome
   app = App.new
-  app.list_options
   app.start
 end
 
