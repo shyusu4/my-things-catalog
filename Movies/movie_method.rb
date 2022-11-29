@@ -15,6 +15,12 @@ module MovieFunctions
     movie = Movie.new(published_date, silet)
     movies << movie
     puts 'Movie created successfully'
+
+    puts 'Enter the name of the source'
+    name = gets.chomp.to_s
+    source = Source.new(name)
+    @sources << source
+    puts 'Source created successfully'
   end
 
   def list_movies(movies)
