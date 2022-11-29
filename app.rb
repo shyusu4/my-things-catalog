@@ -14,6 +14,7 @@ class App
     puts 'Add publish date:'
     published_date = gets.chomp
     book = Book.new(published_date, publisher, cover_state)
+    add_label(book)
     puts 'Book created successfully'
   end
 
@@ -58,6 +59,13 @@ class App
       puts 'File saved successfully!'
       puts 'Thank you for using this app!'
       exit
+    end
+  end
+
+  def start
+    loop do
+      welcome
+      list_options
     end
   end
 end
