@@ -1,4 +1,19 @@
 class App
+  def initialize
+    @book = []
+  end
+
+  def add_book
+    puts 'Add publisher:'
+    publisher = gets.chomp
+    puts 'Add cover state (good or bad):'
+    cover_state = gets.chomp
+    puts 'Add publish date:'
+    published_date = gets.chomp
+    book = Book.new(published_date, publisher, cover_state)
+    puts 'Book created successfully'
+  end
+
   def list_options
     option = gets.chomp.to_s
     case option
