@@ -9,5 +9,8 @@ describe Author do
     it 'should have a last_name' do
       expect(author.last_name).to eq('Williams')
     end
+    it 'has add_item method' do
+      expect(author).to respond_to(:add_item)
+    end
   end
 end
