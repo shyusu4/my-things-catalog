@@ -13,7 +13,6 @@ class Genere
   end
 end
 
-
 # For testing run `ruby ./Genere/genere.rb`
 genere = Genere.new('comedy')
 puts genere.id, genere.name
