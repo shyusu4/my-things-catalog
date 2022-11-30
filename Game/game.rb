@@ -14,9 +14,9 @@ class Game < Item
   end
 
   def create_json
-    super.merge({
-                  multiplayer: @multiplayer,
-                  last_played_at: @last_played_at
-                })
+    super.merge(
+      multiplayer: @multiplayer,
+      last_played_at: @last_played_at
+    )
   end
 end
