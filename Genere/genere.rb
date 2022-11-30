@@ -1,5 +1,5 @@
 class Genere
-  attr_reader :name, :id
+  attr_reader :name, :id, :items
 
   def initialize(name)
     @id = Random.rand(100)
@@ -12,7 +12,3 @@ class Genere
     items.genre = self
   end
 end
-
-# For testing run `ruby ./Genere/genere.rb`
-genere = Genere.new('comedy')
-puts genere.id, genere.name

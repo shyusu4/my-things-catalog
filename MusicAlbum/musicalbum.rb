@@ -1,6 +1,6 @@
 require_relative '../item'
 
-class MusicAlum < Item
+class MusicAlbum < Item
   attr_reader :on_spotify
 
   def initialize(on_spotify, published_date)
@@ -12,7 +12,3 @@ class MusicAlum < Item
     super() && @on_spotify
   end
 end
-
-## test intance
-alb = MusicAlum.new(true, 3)
-puts alb.can_be_archived?
