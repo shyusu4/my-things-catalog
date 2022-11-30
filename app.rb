@@ -12,6 +12,7 @@ class App
   include MovieFunctions
   include SourcesFunctions
   attr_accessor :games, :authors, :items
+
   def initialize
     @movies = []
     @sources = []
@@ -19,7 +20,6 @@ class App
     @label = []
     @games = []
     @authors = []
-    
     @game_store = DataStore.new('games')
     @games = @game_store.read.map do |game|
       Game.new(game['multiplayer'], game['last_played_at'], game['published_date'])
