@@ -6,11 +6,11 @@ require './item'
 require './data_store'
 
 class App
-  attr_accessor :games, :authors, :items
+  attr_accessor :games, :authors, :books, :labels, :items
 
   def initialize
-    @book = []
-    @label = []
+    @books = []
+    @labels = []
     @games = []
     @authors = []
 
@@ -27,12 +27,13 @@ class App
 
   def add_book
     puts 'Publisher:'
-    publisher = gets.chomp
+    publisher = gets.chomp.to_s
     puts 'Cover state (good/bad):'
-    cover_state = gets.chomp
+    cover_state = gets.chomp.to_s
     puts 'Publish date [Enter date in format (yyyy-mm-dd)]:'
-    published_date = gets.chomp
+    published_date = gets.chomp.to_s
     book = Book.new(published_date, publisher, cover_state)
+    @books << book
     add_label(book)
     puts 'Book created successfully'
   end
@@ -42,9 +43,29 @@ class App
     title = gets.chomp
     puts 'Color:'
     color = gets.chomp
-    label = Label.new(title, color)
-    label.add_item(item)
+    @labels << Label.new(title, color)
+    ##label.add_item(item)
     puts 'Label created successfully'
+  end
+
+  def list_labels
+    if @labels.empty?
+      puts 'There are no labels in the catalog'
+    else
+      @labels.each do |label|
+        puts "Title: #{label.title}, Color: #{label.color}"
+      end
+    end
+  end
+
+  def list_books
+    if @books.empty?
+      puts 'There are no books in the catalog'
+    else
+      @books.each do |book|
+        puts "Pulblisher: #{book.publisher}, Cover state: #{book.cover_state}, Published date: #{book.published_date}"
+      end
+    end
   end
 
   def add_author
