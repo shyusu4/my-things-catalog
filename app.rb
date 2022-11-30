@@ -2,8 +2,10 @@ require_relative './Movies/movie'
 require_relative './Movies/movie_method'
 require_relative './Source/source'
 require_relative './Source/source_method'
-require './Game/game'
+require './book-label/book'
+require './book-label/label'
 require './Author/author'
+require './Game/game'
 require './item'
 require './data_store'
 class App
@@ -13,9 +15,11 @@ class App
   def initialize
     @movies = []
     @sources = []
+    @book = []
+    @label = []
     @games = []
     @authors = []
-
+    
     @game_store = DataStore.new('games')
     @games = @game_store.read.map do |game|
       Game.new(game['multiplayer'], game['last_played_at'], game['published_date'])
@@ -25,6 +29,28 @@ class App
     @authors = @author_store.read.map do |author|
       Author.new(author['first_name'], author['last_name'])
     end
+  end
+
+  def add_book
+    puts 'Publisher:'
+    publisher = gets.chomp
+    puts 'Cover state (good/bad):'
+    cover_state = gets.chomp
+    puts 'Publish date [Enter date in format (yyyy-mm-dd)]:'
+    published_date = gets.chomp
+    book = Book.new(published_date, publisher, cover_state)
+    add_label(book)
+    puts 'Book created successfully'
+  end
+
+  def add_label(item)
+    puts 'Title:'
+    title = gets.chomp
+    puts 'Color:'
+    color = gets.chomp
+    label = Label.new(title, color)
+    label.add_item(item)
+    puts 'Label created successfully'
   end
 
   def add_author
