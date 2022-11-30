@@ -13,7 +13,7 @@ class App
     @label = []
     @games = []
     @authors = []
-    
+
     @game_store = DataStore.new('games')
     @games = @game_store.read.map do |game|
       Game.new(game['multiplayer'], game['last_played_at'], game['published_date'])
@@ -46,7 +46,7 @@ class App
     label.add_item(item)
     puts 'Label created successfully'
   end
-  
+
   def add_author
     puts 'Enter first name:'
     first_name = gets.chomp
