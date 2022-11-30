@@ -1,15 +1,25 @@
+require_relative './Movies/movie'
+require_relative './Movies/movie_method'
+require_relative './Source/source'
+require_relative './Source/source_method'
+require './book-label/book'
+require './book-label/label'
 require './Author/author'
 require './Game/game'
 require './item'
 require './data_store'
-
 class App
-  attr_accessor :games, :authors, :items
+  include MovieFunctions
+  include SourcesFunctions
+  attr_accessor :games, :authors, :books, :labels, :items
 
   def initialize
+    @movies = []
+    @sources = []
+    @books = []
+    @labels = []
     @games = []
     @authors = []
-
     @game_store = DataStore.new('games')
     @games = @game_store.read.map do |game|
       Game.new(game['multiplayer'], game['last_played_at'], game['published_date'])
@@ -18,6 +28,48 @@ class App
     @author_store = DataStore.new('authors')
     @authors = @author_store.read.map do |author|
       Author.new(author['first_name'], author['last_name'])
+    end
+  end
+
+  def add_book
+    puts 'Publisher:'
+    publisher = gets.chomp.to_s
+    puts 'Cover state (good/bad):'
+    cover_state = gets.chomp.to_s
+    puts 'Publish date [Enter date in format (yyyy-mm-dd)]:'
+    published_date = gets.chomp.to_s
+    book = Book.new(published_date, publisher, cover_state)
+    @books << book
+    add_label(book)
+    puts 'Book created successfully'
+  end
+
+  def add_label
+    puts 'Title:'
+    title = gets.chomp
+    puts 'Color:'
+    color = gets.chomp
+    @labels << Label.new(title, color)
+    puts 'Label created successfully'
+  end
+
+  def list_labels
+    if @labels.empty?
+      puts 'There are no labels in the catalog'
+    else
+      @labels.each do |label|
+        puts "Title: #{label.title}, Color: #{label.color}"
+      end
+    end
+  end
+
+  def list_books
+    if @books.empty?
+      puts 'There are no books in the catalog'
+    else
+      @books.each do |book|
+        puts "Pulblisher: #{book.publisher}, Cover state: #{book.cover_state}, Published date: #{book.published_date}"
+      end
     end
   end
 
@@ -79,13 +131,13 @@ class App
     when '3'
       list_music_albums
     when '4'
-      list_movies
+      list_movies(@movies)
     when '5'
       list_games
     when '6'
       list_authors
     when '7'
-      list_sources
+      list_sources(@sources)
     when '8'
       list_genres
     when '9'
@@ -95,7 +147,7 @@ class App
     when '11'
       add_game
     when '12'
-      add_movie
+      add_movie(@movies)
     when '13'
       puts 'File saved successfully!'
       puts 'Thank you for using this app!'
