@@ -16,8 +16,8 @@ class Source
 
   def create_json
     {
-     id: @id,
-     name: @name
-    } 
+      id: @id,
+      name: @name
+    }
   end
 end

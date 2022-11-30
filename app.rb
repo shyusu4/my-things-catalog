@@ -30,7 +30,7 @@ class App
       Author.new(author['first_name'], author['last_name'])
     end
 
-    @movie_store =DataStore.new('movies')
+    @movie_store = DataStore.new('movies')
     @movies = @movie_store.read.map do |movie|
       Movie.new(movie['published_date'], movie['silet'])
     end
@@ -39,7 +39,6 @@ class App
     @sources = @source_store.read.map do |source|
       Source.new(source['name'])
     end
-
   end
 
   def add_book

@@ -13,7 +13,7 @@ class Movie < Item
 
   def create_json
     super.merge(
-      silet: @silet 
+      silet: @silet
     )
   end
 end
