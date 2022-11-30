@@ -23,3 +23,8 @@ CREATE TABLE authors(
     first_name varchar(255),
     last_name varchar(255),
 )
+
+CREATE TABLE music_album(
+    on_spotify Boolean,
+        publish_date Date
+);
