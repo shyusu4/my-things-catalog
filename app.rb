@@ -29,6 +29,17 @@ class App
     @authors = @author_store.read.map do |author|
       Author.new(author['first_name'], author['last_name'])
     end
+
+    @movie_store =DataStore.new('movies')
+    @movies = @movie_store.read.map do |movie|
+      Movie.new(movie['published_date'], movie['silet'])
+    end
+
+    @source_store = DataStore.new('sources')
+    @sources = @source_store.read.map do |source|
+      Source.new(source['name'])
+    end
+
   end
 
   def add_book
@@ -160,6 +171,8 @@ class App
   def close
     @game_store.write(@games.map(&:create_json))
     @author_store.write(@authors.map(&:create_json))
+    @movie_store.write(@movies.map(&:create_json))
+    @source_store.write(@sources.map(&:create_json))
   end
 
   def start

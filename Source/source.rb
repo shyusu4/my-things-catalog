@@ -13,4 +13,11 @@ class Source
     @items << item
     item.source = self
   end
+
+  def create_json
+    {
+     id: @id,
+     name: @name
+    } 
+  end
 end

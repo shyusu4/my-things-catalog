@@ -10,4 +10,10 @@ class Movie < Item
   def can_be_archived?
     true if can_be_archived? || @silet == true
   end
+
+  def create_json
+    super.merge(
+      silet: @silet 
+    )
+  end
 end
