@@ -6,8 +6,11 @@ require './book-label/book'
 require './book-label/label'
 require './Author/author'
 require './Game/game'
+require './MusicAlbum/musicalbum'
+require './Genere/genere'
 require './item'
 require './data_store'
+
 class App
   include MovieFunctions
   include SourcesFunctions
@@ -20,6 +23,8 @@ class App
     @labels = []
     @games = []
     @authors = []
+    @music_albums = []
+    @generes = []
     @game_store = DataStore.new('games')
     @games = @game_store.read.map do |game|
       Game.new(game['multiplayer'], game['last_played_at'], game['published_date'])
@@ -118,6 +123,45 @@ class App
       @authors.each do |author|
         puts "First name: #{author.first_name}, Last name: #{author.last_name}"
       end
+    end
+  end
+
+  def add_music_album
+    print 'Is the album on spotify? [y, n]: '
+    read_on_spotify = gets.chomp
+    on_spotify = true if read_on_spotify == 'y'
+    on_spotify = false if read_on_spotify == 'n'
+
+    print 'When was the game published?'
+    published_date = gets.chomp
+
+    @music_albums << MusicAlbum.new(on_spotify, published_date)
+    print 'Music album was successfully generated. '
+
+    print 'What is the name of the genere? '
+    name = gets.chomp
+
+    @generes << Genere.new(name)
+    print 'Music album was successfully generated. '
+  end
+
+  def list_music_albums
+    if @music_albums.empty?
+      puts 'There are no music albums.'
+    else
+      @music_albums.each do |album|
+        is = 'is '
+        is += 'not ' unless album.on_spotify
+        print 'The album ', is, 'on Spotify, and was published on ', album.published_date, ".\n"
+      end
+    end
+  end
+
+  def list_genres
+    if @generes.empty?
+      puts 'There are no generes.'
+    else
+      @generes.each { |genere| print 'The genere is ', genere.name, ".\n" }
     end
   end
 
