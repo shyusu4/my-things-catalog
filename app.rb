@@ -50,7 +50,6 @@ class App
     puts 'Color:'
     color = gets.chomp
     @labels << Label.new(title, color)
-    ## label.add_item(item)
     puts 'Label created successfully'
   end
 
