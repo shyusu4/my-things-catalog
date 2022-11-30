@@ -38,13 +38,13 @@ class App
     puts 'Book created successfully'
   end
 
-  def add_label(item)
+  def add_label(_item)
     puts 'Title:'
     title = gets.chomp
     puts 'Color:'
     color = gets.chomp
     @labels << Label.new(title, color)
-    ##label.add_item(item)
+    # #label.add_item(item)
     puts 'Label created successfully'
   end
 
