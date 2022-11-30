@@ -12,4 +12,12 @@ class Label
     @items << item
     item.label = self
   end
+
+  def create_json
+    {
+      id: @id,
+      title: @title,
+      color: @color
+    }
+  end
 end
