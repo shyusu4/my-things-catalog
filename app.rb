@@ -12,12 +12,12 @@ class App
 
     @game_store = DataStore.new('games')
     @games = @game_store.read.map do |game|
-      Game.new(game[0], game[1], game[2])
+      Game.new(game['multiplayer'], game['last_played_at'], game['published_date'])
     end
 
     @author_store = DataStore.new('authors')
     @authors = @author_store.read.map do |author|
-      Author.new(author[0], author[1])
+      Author.new(author['first_name'], author['last_name'])
     end
   end
 
