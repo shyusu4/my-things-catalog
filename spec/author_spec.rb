@@ -1,4 +1,4 @@
-require_relative '../Game/author'
+require_relative '../Author/author'
 
 describe Author do
   let(:author) { Author.new('Josh', 'Williams') }
@@ -14,3 +14,4 @@ describe Author do
     end
   end
 end
+

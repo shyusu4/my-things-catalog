@@ -2,16 +2,29 @@ require_relative './Movies/movie'
 require_relative './Movies/movie_method'
 require_relative './Source/source'
 require_relative './Source/source_method'
-require './Game/author'
 require './Game/game'
+require './Author/author'
+require './item'
+require './data_store'
 class App
   include MovieFunctions
   include SourcesFunctions
+  attr_accessor :games, :authors, :items
   def initialize
     @movies = []
     @sources = []
     @games = []
     @authors = []
+
+    @game_store = DataStore.new('games')
+    @games = @game_store.read.map do |game|
+      Game.new(game['multiplayer'], game['last_played_at'], game['published_date'])
+    end
+
+    @author_store = DataStore.new('authors')
+    @authors = @author_store.read.map do |author|
+      Author.new(author['first_name'], author['last_name'])
+    end
   end
 
   def add_author
@@ -92,8 +105,14 @@ class App
     when '13'
       puts 'File saved successfully!'
       puts 'Thank you for using this app!'
+      close
       exit 0
     end
+  end
+
+  def close
+    @game_store.write(@games.map(&:create_json))
+    @author_store.write(@authors.map(&:create_json))
   end
 
   def start
