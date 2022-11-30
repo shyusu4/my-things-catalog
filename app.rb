@@ -12,6 +12,7 @@ class App
   include MovieFunctions
   include SourcesFunctions
   attr_accessor :games, :authors, :books, :labels, :items
+  
   def initialize
     @movies = []
     @sources = []
@@ -43,13 +44,13 @@ class App
     puts 'Book created successfully'
   end
 
-  def add_label(item)
+  def add_label
     puts 'Title:'
     title = gets.chomp
     puts 'Color:'
     color = gets.chomp
     @labels << Label.new(title, color)
-    ##label.add_item(item)
+    ## label.add_item(item)
     puts 'Label created successfully'
   end
 
