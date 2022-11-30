@@ -12,7 +12,6 @@ class App
   include MovieFunctions
   include SourcesFunctions
   attr_accessor :games, :authors, :books, :labels, :items
-  
   def initialize
     @movies = []
     @sources = []
