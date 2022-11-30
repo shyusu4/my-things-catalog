@@ -1,7 +1,7 @@
 require './item'
 
 class Game < Item
-  attr_reader :multiplayer, :last_played_at, :published_date
+  attr_accessor :multiplayer, :last_played_at, :published_date
 
   def initialize(multiplayer, last_played_at, published_date)
     super(published_date, false)
@@ -14,9 +14,9 @@ class Game < Item
   end
 
   def create_json
-    super.merge({
-                  multiplayer: @multiplayer,
-                  last_played_at: @last_played_at
-                })
+    super.merge(
+      multiplayer: @multiplayer,
+      last_played_at: @last_played_at
+    )
   end
 end
