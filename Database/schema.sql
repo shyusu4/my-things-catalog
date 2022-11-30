@@ -26,7 +26,7 @@ CREATE TABLE authors(
 
 CREATE TABLE music_album(
     on_spotify Boolean,
-        publish_date Date
+    publish_date Date
 );
 
 CREATE TABLE genere(
