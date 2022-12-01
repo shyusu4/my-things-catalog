@@ -44,6 +44,16 @@ class App
     @labels = @label_store.read.map do |label|
       Label.new(label['title'], label['color'])
     end
+
+    @music_album_store = DataStore.new('music_albums')
+    @music_albums = @music_album_store.read.map do |album|
+      MusicAlbum.new(album['on_spotify'], album['published_date'])
+    end
+
+    @genere_store = DataStore.new('generes')
+    @generes = @genere_store.read.map do |genere|
+      Genere.new(genere['name'], items: genere['items'])
+    end
   end
 
   def add_book
@@ -215,6 +225,8 @@ class App
     @author_store.write(@authors.map(&:create_json))
     @book_store.write(@books.map(&:create_json))
     @label_store.write(@labels.map(&:create_json))
+    @music_album_store.write(@music_albums.map(&:create_json))
+    @genere_store.write(@generes.map(&:create_json))
   end
 
   def start

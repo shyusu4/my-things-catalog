@@ -11,4 +11,10 @@ class MusicAlbum < Item
   def can_be_archived?()
     super() && @on_spotify
   end
+
+  def create_json
+    super.merge(
+      on_spotify: @on_spotify
+    )
+  end
 end
