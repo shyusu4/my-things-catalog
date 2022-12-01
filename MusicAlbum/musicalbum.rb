@@ -13,9 +13,8 @@ class MusicAlbum < Item
   end
 
   def create_json
-    {
-      on_spotify: @on_spotify,
-      published_date: @published_date
-    }
+    super.merge(
+      on_spotify: @on_spotify
+    )
   end
 end
