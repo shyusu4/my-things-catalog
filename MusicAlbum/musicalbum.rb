@@ -11,4 +11,11 @@ class MusicAlbum < Item
   def can_be_archived?()
     super() && @on_spotify
   end
+
+  def create_json
+    {
+      on_spotify: @on_spotify,
+      published_date: @published_date
+    }
+  end
 end
