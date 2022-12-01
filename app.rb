@@ -48,7 +48,7 @@ class App
 
     @book_store = DataStore.new('books')
     @books = @book_store.read.map do |book|
-      Book.new(book['publisher'], book['cover_state'], book['published_date'])
+      Book.new(book['published_date'], book['publisher'], book['cover_state'])
     end
 
     @label_store = DataStore.new('labels')
@@ -76,7 +76,7 @@ class App
     published_date = gets.chomp.to_s
     book = Book.new(published_date, publisher, cover_state)
     @books << book
-    add_label(book)
+    add_label
     puts 'Book created successfully'
   end
 
