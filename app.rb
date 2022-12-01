@@ -98,14 +98,6 @@ class App
     end
   end
 
-  def add_author
-    puts 'Enter first name:'
-    first_name = gets.chomp
-    puts 'Enter last name:'
-    last_name = gets.chomp
-    @authors = Author.new(first_name, last_name)
-  end
-
   def add_game
     print 'Does the game have multiplayer? '
     multiplayer = gets.chomp.to_s
