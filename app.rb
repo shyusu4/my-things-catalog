@@ -26,6 +26,7 @@ class App
     @music_albums = []
     @generes = []
     @game_store = DataStore.new('games')
+
     @games = @game_store.read.map do |game|
       Game.new(game['multiplayer'], game['last_played_at'], game['published_date'])
     end
@@ -43,6 +44,7 @@ class App
     @source_store = DataStore.new('sources')
     @sources = @source_store.read.map do |source|
       Source.new(source['name'])
+    end
 
     @book_store = DataStore.new('books')
     @books = @book_store.read.map do |book|
