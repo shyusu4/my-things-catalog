@@ -10,9 +10,9 @@ AllCops:
 Layout/LineLength:
   Max: 500
 Metrics/MethodLength:
-  Max: 150
+  Max: 250
 Metrics/AbcSize:
-  Max: 50
+  Max: 250
 Metrics/ClassLength:
   Max: 400
 Metrics/BlockLength:
@@ -48,6 +48,8 @@ Lint/StructNewOverride:
 Metrics/MethodLength:
   Enabled: false
 Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/PerceivedComplexity:
   Enabled: false
 Style/HashEachMethods:
   Enabled: false

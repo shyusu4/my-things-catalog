@@ -25,7 +25,9 @@ module MovieFunctions
 
   def list_movies(movies)
     movies.each_with_index do |movie, index|
-      puts "#{index + 1} - #{movie.published_date} - #{movie.silet}"
+      is = 'is '
+      is += 'not ' unless movie.silet
+      puts "#{index + 1} - Publish Date: #{movie.published_date} - The movies #{is} silent."
     end
   end
 end
