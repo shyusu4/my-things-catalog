@@ -11,4 +11,11 @@ class Genere
     @items << item
     items.genre = self
   end
+
+  def create_json
+    {
+      name: @name,
+      items: @items
+    }
+  end
 end
