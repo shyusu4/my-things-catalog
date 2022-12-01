@@ -1,18 +1,21 @@
 class Genere
-  attr_reader :name, :id
+  attr_reader :name, :id, :items
 
-  def initialize(name)
+  def initialize(name, items: [])
     @id = Random.rand(100)
     @name = name
-    @items = []
+    @items = items
   end
 
   def add_item(item)
     @items << item
     items.genre = self
   end
-end
 
-# For testing run `ruby ./Genere/genere.rb`
-genere = Genere.new('comedy')
-puts genere.id, genere.name
+  def create_json
+    {
+      name: @name,
+      items: @items
+    }
+  end
+end

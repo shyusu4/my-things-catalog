@@ -20,7 +20,6 @@ def welcome
 end
 
 def main
-  welcome
   app = App.new
   app.start
 end
