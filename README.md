@@ -4,29 +4,21 @@
 
 - [About the Project](#about-project)
   - [Built With](#built-with)
-  - [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Usage](#usage)
 - [Authors](#authors)
-- [Future Features](#future-features)
 - [Contributing](#contributing)
-- [Show your support](#support)
-- [Acknowledgements](#acknowledgements)
 - [License](#license)
 
 # Catalog Of My Things <a name="about-project"></a>
 
-> A Ruby console app that allows users to keep track of things like books, music albums and games to help users stay organized. The console app provided users with the ability to easily add and delete items they are tracking.
+A Ruby console app that allows users to keep track of things like books, music albums and games to help them stay organized. Users can easily add and delete items they are tracking.
 
 ## Built With <a name="built-with"></a>
 
 - Ruby
-
-## Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link]()
 
 ## Getting Started <a name="getting-started"></a>
 
@@ -73,23 +65,11 @@ To run the project, execute the following command:
 - Twitter: [@AbigiyaTY](https://twitter.com/AbigiyaTY)
 - LinkedIn: [AbigiyaTY](https://www.linkedin.com/in/AbigiyaTY)
 
-## Future Features <a name="future-features"></a>
-
-- [ ] **RSpec Tests**
-
 ## Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page.]()
-
-## Show your support <a name="support"></a>
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments <a name="acknowledgements"></a>
-
-I would like to thank Microverse for the project guidelines.
 
 ## License <a name="license"></a>
 
